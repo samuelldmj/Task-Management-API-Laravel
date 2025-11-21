@@ -22,7 +22,7 @@ class TaskController extends Controller
         Gate::authorize('viewAny', Task::class);
         $tasks = Auth::user()
             ->tasks()
-            ->handleSort(request()->sort('sort_by' ?? 'time'))
+            ->handleSort(request('sort_by', 'time'))
             ->with('priority')
             ->get();
 

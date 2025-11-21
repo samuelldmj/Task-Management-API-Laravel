@@ -30,7 +30,7 @@ class Task extends Model
     }
 
 
-    public function scopeHandlerSort(Builder $query, ?string $column)
+    public function scopeHandleSort(Builder $query, ?string $column)
     {
         $query->when($column === 'name', function ($query) {
             $query->orderBy('name', 'asc');
